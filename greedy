@@ -1,0 +1,74 @@
+#include <stdio.h>
+#include <cs50.h>
+
+int main() { 
+float money_float, money_tf_float, money_ten_float, money_f_float;
+int money_tf_int, money_ten_int, money_f_int, money_o_int;
+do 
+{ 
+money_float = GetFloat();
+}
+while (money_float < 0);
+
+do
+{
+money_tf_int = money_float / 0.2499; //4islo int vuvodit sostavnoe bez okrygleni9 (0.49/0.25=1)
+money_tf_float = money_float - (0.25 * money_tf_int);
+
+do
+{
+money_ten_int = money_tf_float / 0.099; //4islo int vuvodit sostavnoe bez okrygleni9 (0.49/0.25=1)
+money_ten_float = money_tf_float - (0.10 * money_ten_int);
+
+do
+{
+money_f_int = money_ten_float / 0.0499; //4islo int vuvodit sostavnoe bez okrygleni9 (0.49/0.25=1)
+money_f_float = money_ten_float - (0.05 * money_f_int);
+do
+{
+money_o_int = money_f_float / 0.0099; //4islo int vuvodit sostavnoe bez okrygleni9 (0.49/0.25=1)
+printf("%i\n", money_tf_int + money_ten_int + money_f_int + money_o_int);
+return 0;
+
+}
+
+while (money_f_float >= 0.010);
+
+if (money_f_float == 0)
+{
+printf("%i\n", money_tf_int + money_ten_int + money_f_int);
+return 0;
+}
+
+}
+
+while (money_ten_float >= 0.05);
+
+if (money_ten_float == 0)
+{
+printf("%i\n", money_tf_int + money_ten_int);
+return 0;
+}
+
+}
+
+while (money_tf_float >= 0.10);
+
+if (money_tf_float == 0)
+{
+printf("%i\n", money_tf_int);
+return 0;
+}
+
+}
+
+wh
+
+ile (money_float >= 0.25);
+
+if (money_float == 0)
+{
+return 0;
+}
+
+}
